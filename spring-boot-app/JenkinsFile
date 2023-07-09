@@ -59,7 +59,7 @@ pipeline {
 
     stage('Build and Test') {
       steps {
-        sh 'ls -ltr'
+       // sh 'ls -ltr'
         // builds the project and create a JAR file
         sh 'cd spring-boot-app && mvn -U clean package'
       }
@@ -112,7 +112,7 @@ pipeline {
 
     stage('Build and Push Docker Image') {
       environment {
-        awsAccountId = '389029577690'
+        awsAccountId = '439415002856'
         region = 'us-east-1'
         repositoryName = 'jjtech-demo'
         dockerImageTag = "${BUILD_NUMBER}"
